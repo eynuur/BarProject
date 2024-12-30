@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.cards-container {
+  display: flex;
+  gap: -20px;
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  background: linear-gradient(45deg, #2a2a2a, #3a3a3a);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  transform-origin: center;
+  cursor: pointer;
+  margin: 0 -20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card:hover {
+  transform: translateY(-20px) rotateY(10deg);
+  z-index: 1;
+}
+
+.card.active {
+  transform: translateY(-30px);
+  background: linear-gradient(45deg, #535bf2, #75bfff);
+  box-shadow: 0 20px 40px rgba(100,108,255,0.4);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  left: 100%;
+  transition: 0.5s;
+}
+
+.card-content {
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-content {
+  opacity: 1;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.8);
+}
+
+.menucard-1 {
+  background-image: url('/src/img/cocktail2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.menucard-2 {
+  background-image: url('/src/img/mocktail.avif');
+  background-size: cover;
+  background-position: center;
+}
+
+.menucard-3 {
+  background-image: url('/src/img/champange.avif');
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,33 @@
+/* about.css */
+.about-container {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 1.125rem;
+    color: #555;
+  }
+  
+  .lead {
+    font-size: 1.25rem;
+    color: #444;
+  }
+  
+  img {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .about-container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  

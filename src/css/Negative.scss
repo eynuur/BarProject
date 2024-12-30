@@ -1,0 +1,51 @@
+/* Negative.scss */
+
+$primary-color: #3498db;
+$secondary-color: #e74c3c;
+
+.negative-btn-container {
+  position: fixed;
+  top: 20px;  /* Yükseklik ayarı */
+  left: 20px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.negative-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    transform: scale(1.1);  /* Hoverda buton biraz büyür */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);  /* Hafif gölge efekti */
+  }
+
+  &:active {
+    transform: scale(0.95);  /* Tıklanırken biraz küçülme */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  /* Hafif daha az gölge */
+  }
+
+  .icon {
+    font-size: 2rem;
+    color: $primary-color;
+    transition: color 0.3s ease;
+  }
+
+  &:hover .icon {
+    color: $secondary-color;  /* Hoverda icon rengi değişir */
+  }
+}
